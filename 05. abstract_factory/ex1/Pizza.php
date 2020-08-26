@@ -3,11 +3,9 @@
 abstract class Pizza {
     public $name;
     public $sauce;
+    public $dough;
 
-    public function prepare(): void {
-        echo 'Preparing ' . $this->name . PHP_EOL;
-        echo 'Adding ' . $this->name . PHP_EOL;
-    }
+    abstract public function prepare();
 
     public function bake(): void {
         echo 'Bake for 25 mins' . PHP_EOL;
@@ -23,5 +21,9 @@ abstract class Pizza {
 
     public function getName(): string {
         return $this->name;
+    }
+
+    public function setName(string $name) {
+        $this->name = $name;
     }
 }
