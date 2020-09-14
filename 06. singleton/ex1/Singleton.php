@@ -8,7 +8,7 @@ class Singleton {
 
     public static function getInstance(): Singleton {
         if (!self::$instance) {
-            return new Singleton();
+            self::$instance = new Singleton();
         }
 
         return self::$instance;
